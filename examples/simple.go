@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/lucat1/css"
-	"github.com/lucat1/helmet"
 	"github.com/lucat1/randr"
 )
 
@@ -15,12 +14,12 @@ func example(ctx randr.Context) string {
 	})
 
 	return randr.HTML(`
-		<h1 class={cx}>Hello world! {cx}</h1>
+		<h1 class={cx}>Hello world!</h1>
 	`)
 }
 
 func main() {
 	res, ctx := randr.Render(example, nil)
 
-	fmt.Printf("Result:\n%s\nHead:\n%s\n", res, helmet.ExtractHead(ctx))
+	fmt.Printf("Result:\n%s\nHead:\n%s\n", res, css.ExtractStyles(ctx))
 }
