@@ -16,11 +16,11 @@ type Data struct {
 // Style returns a classname for the associated stylesheet required
 func Style(ctx randr.Context, styles map[string]string) string {
 	if ctx.Data[CSSContext] == nil {
-		ctx.Data[CSSContext] = Data{
+		ctx.Data[CSSContext] = &Data{
 			Data: map[string]string{},
 		}
 	}
-	data := ctx.Data[CSSContext].(Data)
+	data := ctx.Data[CSSContext].(*Data)
 
 	classes := []string{}
 	for k, v := range styles {

@@ -11,7 +11,7 @@ func ExtractStyles(ctx randr.Context) string {
 	if ctx.Data[CSSContext] == nil {
 		return ""
 	}
-	data := ctx.Data[CSSContext].(Data).Data
+	data := ctx.Data[CSSContext].(*Data).Data
 	res := ""
 	for rule, class := range data {
 		res += "." + class + "{" + rule + "}"

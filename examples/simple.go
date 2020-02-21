@@ -14,7 +14,7 @@ func example(ctx randr.Context) string {
 	})
 
 	return randr.HTML(`
-		<h1 class={cx}>Hello world!</h1>
+		<h1 class="{cx}">Hello world!</h1>
 	`)
 }
 
